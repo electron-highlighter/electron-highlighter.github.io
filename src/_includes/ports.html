@@ -1,0 +1,16 @@
+<section class="py-12 lg:py-20 my-12 lg:my-20 bg-eh-light-black">
+  <div class="mx-auto block max-w-7xl w-full px-6 lg:px-12">
+    <h2 id="ports" class="text-eh-white text-3xl lg:text-4xl font-bold mb-8">Ports</h2>
+    <p class="mb-8 lg:mb-12 text-base lg:text-xl leading-loose">Electron Highlighter is available for the following platforms:</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-6">
+    {% for item in ports.data %}
+      <a href="https://github.com/electron-highlighter/{{ item.repo }}" target="_blank" class="flex items-center gap-3 group">
+        <span class="h-5 w-5 text-eh-{{ item.color }}">
+          {% include item.icon + ".svg" %}
+        </span>
+        <span class="text-lg text-eh-light-gray group-hover:text-eh-white">{{ item.name }}</span>
+      </a>
+    {% endfor %}
+    </div>
+  </div>
+</section>
