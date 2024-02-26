@@ -638,6 +638,10 @@ video {
   width: 100%;
 }
 
+.w-screen {
+  width: 100vw;
+}
+
 .max-w-3xl {
   max-width: 48rem;
 }
@@ -690,6 +694,10 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 .overflow-x-hidden {
@@ -980,10 +988,6 @@ html {
 * prism.js theme
 */
 
-.code-snippets pre {
-  overflow: auto;
-}
-
 /* purgecss start ignore */
 
 pre[class*="language-"],
@@ -1009,11 +1013,11 @@ pre.prismjs {
 
 /* Code blocks */
 
+.code-snippet > pre,
 pre.prismjs {
   background: transparent;
   margin: 0;
   overflow: auto;
-  padding: 1rem;
   width: 100%;
 }
 
