@@ -1,6 +1,7 @@
 const yaml = require("js-yaml");
 const htmlmin = require("html-minifier");
 const MarkdownIt = require("markdown-it");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const md = new MarkdownIt({
   html: true,
@@ -45,6 +46,9 @@ module.exports = function(eleventyConfig) {
 
     return content;
   });
+
+  // add syntax highlighting
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   // Let Eleventy transform HTML files as nunjucks
   // So that we can use .html instead of .njk

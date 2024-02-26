@@ -1,9 +1,392 @@
 <section class="py-12 lg:py-20 my-12 lg:my-20">
   <div class="mx-auto block max-w-7xl w-full px-6 lg:px-12">
-    <h2 class="text-eh-white text-3xl lg:text-4xl font-bold mb-8">Examples</h2>
+    <h2 id="examples" class="text-eh-white text-3xl lg:text-4xl font-bold mb-8">Examples</h2>
     <p class="mb-8 lg:mb-12 text-base lg:text-xl leading-loose">Below you can check out some examples of the color scheme being used in common languages.</p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-6">
-      todo
+    <div class="border border-eh-yellow bg-eh-yellow bg-opacity-20 rounded-md p-4 text-eh-yellow mb-8">
+      <p><span class="font-bold uppercase">Note:</span> The code examples below are using the <a href="https://prismjs.com/" class="font-bold underline">PrismJS</a> syntax highlighter. The actual syntax highlighting in your editor may look different.</p>
     </div>
+    <div class="border border-eh-dark-gray rounded-md mb-6">
+      <header class="border-b border-eh-dark-gray mb-4 p-4 flex items-center">
+
+        <h3 class="text-eh-light-gray text-base">CSS</h3>
+      </header>
+      <div class="p-4">
+{% highlight "css" %}
+:root {
+  --font-base: 16px;
+}
+.someClass {
+  font-family: serif;
+  font-size: var(--font-base);
+}
+
+#someID {
+  background: yellow;
+  display: flex;
+}
+
+main {
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
+{% endhighlight %}
+      </div>
   </div>
+  <div class="border border-eh-dark-gray rounded-md mb-6">
+      <header class="border-b border-eh-dark-gray mb-4 p-4 flex items-center">
+
+        <h3 class="text-eh-light-gray text-base">HTML</h3>
+      </header>
+      <div class="p-4">
+{% highlight "html" %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app" class="tacos">Tacos Tacos</div>
+
+  <p>Tacos tacos tacos</p>
+  <!--comment-->
+</body>
+
+</html>
+{% endhighlight %}
+      </div>
+</div>
+<div class="border border-eh-dark-gray rounded-md mb-6">
+      <header class="border-b border-eh-dark-gray mb-4 p-4 flex items-center">
+
+        <h3 class="text-eh-light-gray text-base">JavaScript</h3>
+      </header>
+      <div class="p-4">
+{% highlight "js" %}
+'use strict'
+class Sale {
+  constructor(price) {
+    ;[this.decoratorsList, this.price] = [[], price]
+  }
+
+  decorate(decorator) {
+    if (!Sale[decorator]) throw new Error(`decorator does not exist: ${decorator}`)
+    this.decoratorsList.push(Sale[decorator])
+  }
+
+  static async remotePrice(price) {
+    return await Promise.all([fetch(`/api/convert/${price}`)])
+  }
+
+  getPrice() {
+    for (let decorator of this.decoratorsList) {
+      this.price = decorator(this.price)
+    }
+    return this.price.toFixed(2)
+  }
+
+  static quebec(price) {
+    // this is a comment
+    return price + price * 7.5 / 100
+  }
+
+  static fedtax(price) {
+    return price + price * 5 / 100
+  }
+}
+{% endhighlight %}
+  </div>
+</div>
+<div class="border border-eh-dark-gray rounded-md mb-6">
+      <header class="border-b border-eh-dark-gray mb-4 p-4 flex items-center">
+
+        <h3 class="text-eh-light-gray text-base">Markdown</h3>
+      </header>
+      <div class="p-4">
+{% highlight "md" %}
+# Electron Highlighter Theme
+
+> Electron Highlighter Theme for Atom
+
+![Preview](images/preview.jpg)
+
+# Installation
+
+1.  Install [Atom](https://atom.io/)
+2.  Launch Atom
+3.  Open **Preferences** > **Install**
+4.  Search for `electron-highlighter-syntax`
+5.  Click **Install** to install it
+6.  Preferences > Themes > Syntax Theme > **Electron Highlighter**
+
+
+- lists
+- more stuff
+- it's a list mkay
+{% endhighlight %}
+  </div>
+</div>
+<div class="border border-eh-dark-gray rounded-md mb-6">
+      <header class="border-b border-eh-dark-gray mb-4 p-4 flex items-center">
+
+        <h3 class="text-eh-light-gray text-base">Go</h3>
+      </header>
+      <div class="p-4">
+{% highlight "go" %}
+import (
+  "fmt"
+  "strings"
+)
+
+type deck []string
+
+func newDeck() deck {
+  cards := deck{}
+
+  cardSuits := []string{"Spades", "Diamonds", "Hearts", "Clubs"}
+  cardValues := []string{"Ace", "Two", "Three", "Four", "Five"}
+
+  for _, suit := range cardSuits {
+    for _, value := range cardValues {
+      cards = append(cards, value+" of "+suit)
+    }
+  }
+
+  return cards
+}
+{% endhighlight %}
+  </div>
+</div>
+<div class="border border-eh-dark-gray rounded-md mb-6">
+      <header class="border-b border-eh-dark-gray mb-4 p-4 flex items-center">
+
+        <h3 class="text-eh-light-gray text-base">PHP</h3>
+      </header>
+      <div class="p-4">
+{% highlight "php" %}
+<?php
+class HelloWorldTest extends PHPUnit_Framework_TestCase
+{
+    /**
+     * @var PDO
+     */
+    private $pdo;
+    public function setUp()
+    {
+        $this->pdo = new PDO($GLOBALS['db_dsn'], $GLOBALS['db_username'], $GLOBALS['db_password']);
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->pdo->query("CREATE TABLE hello (what VARCHAR(50) NOT NULL)");
+    }
+    public function tearDown()
+    {
+        $this->pdo->query("DROP TABLE hello");
+    }
+    public function testHelloWorld()
+    {
+        $helloWorld = new HelloWorld($this->pdo);
+        $this->assertEquals('Hello World', $helloWorld->hello());
+    }
+    public function testHello()  
+    {
+        $helloWorld = new HelloWorld($this->pdo);
+        $this->assertEquals('Hello Bar', $helloWorld->hello('Bar'));
+    }
+    public function testWhat()
+    {
+        $helloWorld = new HelloWorld($this->pdo);
+        $this->assertFalse($helloWorld->what());
+        $helloWorld->hello('Bar');
+        $this->assertEquals('Bar', $helloWorld->what());
+    }
+}
+?>
+{% endhighlight %}
+  </div>
+</div>
+<div class="border border-eh-dark-gray rounded-md mb-6">
+      <header class="border-b border-eh-dark-gray mb-4 p-4 flex items-center">
+
+        <h3 class="text-eh-light-gray text-base">Python</h3>
+      </header>
+      <div class="p-4">
+{% highlight "py" %}
+from collections import deque
+def topo(G, ind=None, Q=[1]):
+    if ind == None:
+        ind = [0] * (len(G) + 1) #this is a comment
+        for u in G:
+            for v in G[u]:
+                ind[v] += 1
+        Q = deque()
+        for i in G:
+            if ind[i] == 0:
+                Q.append(i)
+    if len(Q) == 0:
+        return
+    v = Q.popleft()
+    print(v)
+    for w in G[v]:
+        ind[w] -= 1
+        if ind[w] == 0:
+            Q.append(w)
+    topo(G, ind, Q)
+{% endhighlight %}
+  </div>
+</div>
+<div class="border border-eh-dark-gray rounded-md mb-6">
+      <header class="border-b border-eh-dark-gray mb-4 p-4 flex items-center">
+
+        <h3 class="text-eh-light-gray text-base">Ruby</h3>
+      </header>
+      <div class="p-4">
+{% highlight "rb" %}
+module ExampleModule
+  class ExampleClass::ScopeResolution < NewScope::Operator
+
+    def initialize(options)
+      @@class_var = options[:class]
+      @instance_var = options[:instance]
+    end
+
+    def method
+      puts 'doing stuff'
+      yield if block_given?
+      other_method(:arg)
+    end
+
+    def self.class_method
+      return "I am a class method!"
+    end
+
+    private
+
+    def other_method(*args)
+      puts 'doing other stuff #{42}'
+    end
+
+    def self.private
+      [1, 2, 3].each do |item|
+        puts item
+      end
+    end
+
+    private_class_method :private
+  end
+end
+
+ExampleModule::ExampleClass::ScopeResolution
+example_instance = ExampleModule::ExampleClass::ScopeResolution.new(:arg)
+
+example_instance.method(:arg) do
+  puts 'yielding in block!'
+end
+{% endhighlight %}
+  </div>
+</div>
+<div class="border border-eh-dark-gray rounded-md mb-6">
+      <header class="border-b border-eh-dark-gray mb-4 p-4 flex items-center">
+
+        <h3 class="text-eh-light-gray text-base">Rust</h3>
+      </header>
+      <div class="p-4">
+{% highlight "rust" %}
+fn main() {
+    let mut mutable_binding = 1;
+
+    println!("Before mutation: {}", mutable_binding);
+
+    // Ok
+    mutable_binding += 1;
+
+    println!("After mutation: {}", mutable_binding);
+}
+{% endhighlight %}
+  </div>
+</div>
+<div class="border border-eh-dark-gray rounded-md mb-6">
+      <header class="border-b border-eh-dark-gray mb-4 p-4 flex items-center">
+
+        <h3 class="text-eh-light-gray text-base">TypeScript</h3>
+      </header>
+      <div class="p-4">
+{% highlight "ts" %}
+import { Component, OnInit, OnDestroy } from '@angular/core'
+import { Person, SearchService } from '../shared'
+import { ActivatedRoute } from '@angular/router'
+import { Subscription } from 'rxjs'
+
+@Component({
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
+})
+export class SearchComponent implements OnInit, OnDestroy {
+  query: string
+  searchResults: Array<Person>
+  sub: Subscription
+
+  constructor(
+    private searchService: SearchService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit() {
+    this.sub = this.route.params.subscribe(params => {
+      if (params['term']) {
+        this.query = decodeURIComponent(params['term'])
+        this.search()
+      }
+    })
+  }
+
+  search(): void {
+    this.searchService.search(this.query).subscribe(
+      (data: any) => {
+        this.searchResults = data
+      },
+      error => console.log(error)
+    )
+  }
+
+  ngOnDestroy() {
+    if (this.sub) {
+      this.sub.unsubscribe()
+    }
+  }
+}
+{% endhighlight %}
+  </div>
+</div>
+<div class="border border-eh-dark-gray rounded-md mb-6">
+      <header class="border-b border-eh-dark-gray mb-4 p-4 flex items-center">
+
+        <h3 class="text-eh-light-gray text-base">YAML</h3>
+      </header>
+      <div class="p-4">
+{% highlight "yml" %}
+language: node_js
+node_js:
+  - "6"
+install:
+  - npm install
+script:
+  - npm test
+after_script:
+  - npm run coveralls
+notifications:
+  email:
+    on_success: never
+    on_failure: always
+{% endhighlight %}
+    </div>
+ </div>
 </section>
+
