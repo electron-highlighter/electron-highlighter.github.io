@@ -1,0 +1,32 @@
+<div class="border border-eh-dark-gray rounded-md mb-6">
+  <header class="border-b border-eh-dark-gray mb-4 p-4 flex items-center">
+
+    <h3 class="text-eh-light-gray text-base">CSS</h3>
+  </header>
+  <div class="p-4 w-full overflow-auto code-snippet">
+{% highlight "css" %}
+:root {
+  --font-base: 16px;
+}
+.someClass {
+  font-family: serif;
+  font-size: var(--font-base);
+}
+
+#someID {
+  background: yellow;
+  display: flex;
+}
+
+main {
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
+{% endhighlight %}
+    </div>
+</div>
+
