@@ -980,8 +980,13 @@ html {
 * prism.js theme
 */
 
+.code-snippets pre {
+  overflow: auto;
+}
+
 /* purgecss start ignore */
 
+pre[class*="language-"],
 code[class*="language-"],
 pre.prismjs {
   color: var(--code-fg);
