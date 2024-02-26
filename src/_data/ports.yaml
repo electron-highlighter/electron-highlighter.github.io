@@ -1,0 +1,45 @@
+data:
+  - name: Neovim
+    repo: nvim
+    icon: neovim
+    color: green
+  - name: VS Code
+    repo: vscode
+    icon: vscode
+    color: blue
+  - name: Insomnia
+    repo: insomnia
+    icon: insomnia
+    color: purple
+  - name: Kitty
+    repo: kitty
+    icon: terminal
+    color: orange
+  - name: Alacritty
+    repo: alacritty
+    icon: rocket
+    color: red
+  - name: Ghostty
+    repo: ghostty
+    icon: ghost
+    color: purple
+  - name: Hyper
+    repo: hyper
+    icon: bolt
+    color: yellow
+  - name: iTerm 2
+    repo: iterm
+    icon: terminal
+    color: green
+  - name: tmux
+    repo: tmux
+    icon: terminal
+    color: cyan
+  - name: Fish Shell
+    repo: fish
+    icon: terminal
+    color: green
+  - name: Terminal.app
+    repo: terminals
+    icon: terminal
+    color: blue

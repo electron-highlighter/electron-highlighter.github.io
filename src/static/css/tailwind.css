@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --selection-color: theme('colors.eh-selection-bg');
+    --selection-foreground: theme('colors.eh-white');
+}
+::selection {
+    background: var(--selection-color);
+    color: var(--selection-foreground);
+}
+
