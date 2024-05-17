@@ -752,7 +752,7 @@ video {
 
 .bg-eh-gray {
   --tw-bg-opacity: 1;
-  background-color: rgb(153 163 184 / var(--tw-bg-opacity));
+  background-color: rgb(124 142 172 / var(--tw-bg-opacity));
 }
 
 .bg-eh-green {
@@ -787,7 +787,7 @@ video {
 
 .bg-eh-white {
   --tw-bg-opacity: 1;
-  background-color: rgb(248 250 253 / var(--tw-bg-opacity));
+  background-color: rgb(197 206 224 / var(--tw-bg-opacity));
 }
 
 .bg-eh-yellow {
@@ -922,7 +922,7 @@ video {
 
 .text-eh-white {
   --tw-text-opacity: 1;
-  color: rgb(248 250 253 / var(--tw-text-opacity));
+  color: rgb(197 206 224 / var(--tw-text-opacity));
 }
 
 .text-eh-yellow {
@@ -963,11 +963,11 @@ video {
   --code-purple: #c792ea;
   --code-bg: #141820;
   --code-comment: #506686;
-  --code-gray: #99a3b8;
+  --code-gray: #7c8eac;
   --code-fg: #a8b5d1;
-  --code-white: #f8fafd
+  --code-white: #c5cee0
     --selection-color: #283457;
-  --selection-foreground: #f8fafd;
+  --selection-foreground: #c5cee0;
 }
 
 ::-moz-selection {
@@ -1108,12 +1108,12 @@ pre code[class*="language-"] {
 
 .hover\:text-eh-white:hover {
   --tw-text-opacity: 1;
-  color: rgb(248 250 253 / var(--tw-text-opacity));
+  color: rgb(197 206 224 / var(--tw-text-opacity));
 }
 
 .group:hover .group-hover\:text-eh-white {
   --tw-text-opacity: 1;
-  color: rgb(248 250 253 / var(--tw-text-opacity));
+  color: rgb(197 206 224 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {
