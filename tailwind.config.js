@@ -9,9 +9,9 @@ const colors =  {
   black: '#141820', // dark background
   lightBlack: '#212836', // background
   darkGray: '#506686', // comments
-  gray: '#99a3b8', // text
+  gray: '#7c8eac', // text
   lightGray: '#a8b5d1', // text
-  white: '#f8fafd', // ui elements, rarely used
+  white: '#c5cee0', // ui elements, rarely used
   selectionBg: '#283457', // selection background
 }
 
