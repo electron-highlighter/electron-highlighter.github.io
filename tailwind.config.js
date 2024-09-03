@@ -7,7 +7,7 @@ const colors =  {
   blue: '#82aaff',
   purple: '#c792ea',
   black: '#141820', // dark background
-  lightBlack: '#212836', // background
+  lightBlack: '#24283B', // background
   darkGray: '#506686', // comments
   gray: '#7c8eac', // text
   lightGray: '#a8b5d1', // text
