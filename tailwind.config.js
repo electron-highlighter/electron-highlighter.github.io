@@ -6,8 +6,8 @@ const colors =  {
   cyan: '#4ff2f8',
   blue: '#82aaff',
   purple: '#c792ea',
-  black: '#141820', // dark background
-  lightBlack: '#24283B', // background
+  bgDark: '#141820', // dark background
+  background: '#24283B', // background
   darkGray: '#506686', // comments
   gray: '#7c8eac', // text
   lightGray: '#a8b5d1', // text
@@ -20,8 +20,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'eh-black': colors.black,
-        'eh-light-black': colors.lightBlack,
+        'eh-bg-dark': colors.bgDark,
+        'eh-background': colors.background,
         'eh-dark-gray': colors.darkGray,
         'eh-gray': colors.gray,
         'eh-light-gray': colors.lightGray,

@@ -10,7 +10,7 @@
     --code-cyan: theme('colors.eh-cyan');
     --code-blue: theme('colors.eh-blue');
     --code-purple: theme('colors.eh-purple');
-    --code-bg: theme('colors.eh-black');
+    --code-bg: theme('colors.eh-background');
     --code-comment: theme('colors.eh-dark-gray');
     --code-gray: theme('colors.eh-gray');
     --code-fg: theme('colors.eh-light-gray');
