@@ -1,11 +1,11 @@
 const colors =  {
   red: '#f7768e',
   orange: '#ffd9af',
-  yellow: '#fffa9e',
-  green: '#34febb',
-  cyan: '#4ff2f8',
+  yellow: '#fcf9c3',
+  green: '#58ffc7',
+  cyan: '#57f9ff',
   blue: '#82aaff',
-  purple: '#c792ea',
+  purple: '#d2a6ef',
   bgDark: '#141820', // dark background
   background: '#24283B', // background
   darkGray: '#506686', // comments
