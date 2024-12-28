@@ -731,7 +731,7 @@ video {
 
 .border-eh-yellow {
   --tw-border-opacity: 1;
-  border-color: rgb(255 250 158 / var(--tw-border-opacity));
+  border-color: rgb(252 249 195 / var(--tw-border-opacity));
 }
 
 .bg-eh-background {
@@ -751,7 +751,7 @@ video {
 
 .bg-eh-cyan {
   --tw-bg-opacity: 1;
-  background-color: rgb(79 242 248 / var(--tw-bg-opacity));
+  background-color: rgb(87 249 255 / var(--tw-bg-opacity));
 }
 
 .bg-eh-dark-gray {
@@ -766,7 +766,7 @@ video {
 
 .bg-eh-green {
   --tw-bg-opacity: 1;
-  background-color: rgb(52 254 187 / var(--tw-bg-opacity));
+  background-color: rgb(88 255 199 / var(--tw-bg-opacity));
 }
 
 .bg-eh-light-gray {
@@ -781,7 +781,7 @@ video {
 
 .bg-eh-purple {
   --tw-bg-opacity: 1;
-  background-color: rgb(199 146 234 / var(--tw-bg-opacity));
+  background-color: rgb(210 166 239 / var(--tw-bg-opacity));
 }
 
 .bg-eh-red {
@@ -796,7 +796,7 @@ video {
 
 .bg-eh-yellow {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 250 158 / var(--tw-bg-opacity));
+  background-color: rgb(252 249 195 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-20 {
@@ -904,12 +904,12 @@ video {
 
 .text-eh-cyan {
   --tw-text-opacity: 1;
-  color: rgb(79 242 248 / var(--tw-text-opacity));
+  color: rgb(87 249 255 / var(--tw-text-opacity));
 }
 
 .text-eh-green {
   --tw-text-opacity: 1;
-  color: rgb(52 254 187 / var(--tw-text-opacity));
+  color: rgb(88 255 199 / var(--tw-text-opacity));
 }
 
 .text-eh-light-gray {
@@ -924,7 +924,7 @@ video {
 
 .text-eh-purple {
   --tw-text-opacity: 1;
-  color: rgb(199 146 234 / var(--tw-text-opacity));
+  color: rgb(210 166 239 / var(--tw-text-opacity));
 }
 
 .text-eh-red {
@@ -939,7 +939,7 @@ video {
 
 .text-eh-yellow {
   --tw-text-opacity: 1;
-  color: rgb(255 250 158 / var(--tw-text-opacity));
+  color: rgb(252 249 195 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -968,11 +968,11 @@ video {
 :root {
   --code-border: rgba(50,50,50,0.1);
   --code-red: #f7768e;
-  --code-yellow: #fffa9e;
-  --code-green: #34febb;
-  --code-cyan: #4ff2f8;
+  --code-yellow: #fcf9c3;
+  --code-green: #58ffc7;
+  --code-cyan: #57f9ff;
   --code-blue: #82aaff;
-  --code-purple: #c792ea;
+  --code-purple: #d2a6ef;
   --code-bg: #24283B;
   --code-comment: #506686;
   --code-gray: #7c8eac;
