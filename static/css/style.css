@@ -776,7 +776,7 @@ video {
 
 .bg-eh-orange {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 191 122 / var(--tw-bg-opacity));
+  background-color: rgb(255 217 175 / var(--tw-bg-opacity));
 }
 
 .bg-eh-purple {
@@ -919,7 +919,7 @@ video {
 
 .text-eh-orange {
   --tw-text-opacity: 1;
-  color: rgb(255 191 122 / var(--tw-text-opacity));
+  color: rgb(255 217 175 / var(--tw-text-opacity));
 }
 
 .text-eh-purple {
