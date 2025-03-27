@@ -907,6 +907,11 @@ video {
   color: rgb(87 249 255 / var(--tw-text-opacity));
 }
 
+.text-eh-gray {
+  --tw-text-opacity: 1;
+  color: rgb(124 142 172 / var(--tw-text-opacity));
+}
+
 .text-eh-green {
   --tw-text-opacity: 1;
   color: rgb(88 255 199 / var(--tw-text-opacity));
@@ -1121,6 +1126,11 @@ pre code[class*="language-"] {
 }
 
 /* purgecss end ignore */
+
+.hover\:text-eh-light-gray:hover {
+  --tw-text-opacity: 1;
+  color: rgb(168 181 209 / var(--tw-text-opacity));
+}
 
 .hover\:text-eh-white:hover {
   --tw-text-opacity: 1;
