@@ -1,9 +1,4 @@
-<div class="border border-eh-dark-gray rounded-md mb-6">
-  <header class="border-b border-eh-dark-gray mb-4 p-4 flex items-center">
-
-    <h3 class="text-eh-light-gray text-base">Rust</h3>
-  </header>
-  <div class="p-4 w-full overflow-auto code-snippet">
+<div x-show="lang == 'rust'" class="p-4 w-full overflow-auto code-snippet">
 {% highlight "rust" %}
 fn main() {
     let mut mutable_binding = 1;
@@ -16,6 +11,5 @@ fn main() {
     println!("After mutation: {}", mutable_binding);
 }
 {% endhighlight %}
-  </div>
 </div>
 

@@ -5,6 +5,19 @@
     <div class="border border-eh-yellow bg-eh-yellow bg-opacity-20 rounded-md p-4 text-eh-yellow mb-8">
       <p><span class="font-bold uppercase">Note:</span> The code examples below are using the <a href="https://prismjs.com/" class="font-bold underline">PrismJS</a> syntax highlighter. The actual syntax highlighting in your editor may look different.</p>
     </div>
+    <div class="border border-eh-dark-gray rounded-md mb-6" x-data="{ lang: 'css' }">
+  <header class="border-b border-eh-dark-gray mb-4 p-4 flex items-center gap-4 w-full overflow-auto">
+    <button class="text-base" :class="lang == 'css' ? 'text-eh-white' : 'text-eh-gray hover:text-eh-light-gray'" @click="lang = 'css'">CSS</button>
+    <button class="text-base" :class="lang == 'html' ? 'text-eh-white' : 'text-eh-gray hover:text-eh-light-gray'" @click="lang = 'html'">HTML</button>
+    <button class="text-base" :class="lang == 'js' ? 'text-eh-white' : 'text-eh-gray hover:text-eh-light-gray'"@click="lang = 'js'">JS</button>
+    <button class="text-base" :class="lang == 'go' ? 'text-eh-white' : 'text-eh-gray hover:text-eh-light-gray'"@click="lang = 'go'">Go</button>
+    <button class="text-base" :class="lang == 'python' ? 'text-eh-white' : 'text-eh-gray hover:text-eh-light-gray'"@click="lang = 'python'">Python</button>
+    <button class="text-base" :class="lang == 'ruby' ? 'text-eh-white' : 'text-eh-gray hover:text-eh-light-gray'"@click="lang = 'ruby'">Ruby</button>
+    <button class="text-base" :class="lang == 'rust' ? 'text-eh-white' : 'text-eh-gray hover:text-eh-light-gray'"@click="lang = 'rust'">Rust</button>
+    <button class="text-base" :class="lang == 'md' ? 'text-eh-white' : 'text-eh-gray hover:text-eh-light-gray'"@click="lang = 'md'">Markdown</button>
+    <button class="text-base" :class="lang == 'ts' ? 'text-eh-white' : 'text-eh-gray hover:text-eh-light-gray'"@click="lang = 'ts'">Typescript</button>
+    <button class="text-base" :class="lang == 'yml' ? 'text-eh-white' : 'text-eh-gray hover:text-eh-light-gray'"@click="lang = 'yml'">YML</button>
+  </header>
     {% include "snippets/css.html" %}
     {% include "snippets/html.html" %}
     {% include "snippets/js.html" %}
@@ -15,5 +28,6 @@
     {% include "snippets/markdown.html" %}
     {% include "snippets/ts.html" %}
     {% include "snippets/yaml.html" %}
+</div>
 </section>
 

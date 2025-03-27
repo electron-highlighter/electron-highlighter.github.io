@@ -1,9 +1,4 @@
-<div class="border border-eh-dark-gray rounded-md mb-6">
-  <header class="border-b border-eh-dark-gray mb-4 p-4 flex items-center">
-
-    <h3 class="text-eh-light-gray text-base">JavaScript</h3>
-  </header>
-  <div class="p-4 w-full overflow-auto code-snippet">
+<div x-show="lang == 'js'" class="p-4 w-full overflow-auto code-snippet">
 {% highlight "js" %}
 'use strict'
 class Sale {
@@ -37,6 +32,5 @@ class Sale {
   }
 }
 {% endhighlight %}
-  </div>
 </div>
 
