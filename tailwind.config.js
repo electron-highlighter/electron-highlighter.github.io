@@ -1,4 +1,4 @@
-const colors =  {
+const colors = {
   red: '#f7768e',
   orange: '#ffd9af',
   yellow: '#fcf9c3',
@@ -36,6 +36,16 @@ module.exports = {
         'eh-selection-bg': colors.selectionBg,
       },
       fontFamily: {
+        'sans': [
+          'IBM Plex Sans',
+          'ui-sans-serif',
+          'system-ui',
+          'sans-serif',
+          'Apple Color Emoji',
+          'Segoe UI Emoji',
+          'Segoe UI Symbol',
+          'Noto Color Emoji'
+        ],
         'mono': [
           'JetBrains Mono',
           'ui-monospace',
