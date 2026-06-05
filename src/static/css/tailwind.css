@@ -123,6 +123,44 @@ pre.prismjs {
   width: 100%;
 }
 
+/* line numbers (gutter injected by the lineNumbers transform in .eleventy.js) */
+/* Padding lives on the <pre> (not the wrapper) so the gutter divider can span
+   the full height of the code area, including the top/bottom breathing room. */
+.code-snippet {
+  padding: 0;
+}
+
+pre[class*="language-"].line-numbers {
+  position: relative;
+  padding: 1rem 1.25rem 1rem 4em;
+  counter-reset: ln;
+}
+
+.line-numbers-rows {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3.25em;
+  padding-top: 1rem;
+  border-right: 1px solid rgb(var(--eh-border));
+  user-select: none;
+  pointer-events: none;
+}
+
+.line-numbers-rows > span {
+  display: block;
+  counter-increment: ln;
+}
+
+.line-numbers-rows > span::before {
+  content: counter(ln);
+  display: block;
+  padding-right: 0.85em;
+  text-align: right;
+  color: rgb(var(--eh-muted) / 0.5);
+}
+
 pre code[class*="language-"] {
   background: transparent;
 }

@@ -32,6 +32,23 @@ module.exports = function(eleventyConfig) {
   // Copy favicon to route of /_site
   eleventyConfig.addPassthroughCopy("./src/favicon.png");
 
+  // Inject Prism-style line-number gutters into highlighted code blocks.
+  // We only count newlines and append a sibling .line-numbers-rows element
+  // (one empty <span> per line) so the token markup is never touched.
+  eleventyConfig.addTransform("lineNumbers", function(content, outputPath) {
+    if (!outputPath || !outputPath.endsWith(".html")) return content;
+    return content.replace(
+      /<pre class="(language-[^"]*)"><code(\b[^>]*)>([\s\S]*?)<\/code><\/pre>/g,
+      (match, preClass, codeAttrs, code) => {
+        const lines = code.split("\n");
+        if (lines.length > 1 && lines[lines.length - 1] === "") lines.pop();
+        const rows = '<span aria-hidden="true" class="line-numbers-rows">' +
+          "<span></span>".repeat(Math.max(lines.length, 1)) + "</span>";
+        return `<pre class="${preClass} line-numbers"><code${codeAttrs}>${code}</code>${rows}</pre>`;
+      }
+    );
+  });
+
   // Minify HTML
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
     // Eleventy 1.0+: use this.inputPath and this.outputPath instead
