@@ -1,23 +1,40 @@
-<section class="py-12 lg:py-20 my-12 lg:my-20">
-  <div class="mx-auto block max-w-7xl w-screen px-6 lg:px-12">
-    <h2 id="examples" class="text-eh-white text-3xl lg:text-4xl font-bold mb-8">Examples</h2>
-    <p class="mb-8 lg:mb-12 text-base lg:text-xl leading-loose">Below you can check out some examples of the color scheme being used in common languages.</p>
-    <div class="border border-eh-yellow bg-eh-yellow bg-opacity-20 rounded-md p-4 text-eh-yellow mb-8">
-      <p><span class="font-bold uppercase">Note:</span> The code examples below are using the <a href="https://prismjs.com/" class="font-bold underline">PrismJS</a> syntax highlighter. The actual syntax highlighting in your editor may look different.</p>
-    </div>
-    <div class="border border-eh-dark-gray rounded-md mb-6" x-data="{ lang: 'css' }">
-  <header class="border-b border-eh-dark-gray mb-4 flex items-center w-full overflow-auto">
-    <button class="text-base px-4 border-r border-eh-dark-gray/50 py-2" :class="lang == 'css' ? 'text-eh-white bg-eh-dark-gray/40' : 'text-eh-gray hover:text-eh-light-gray hover:bg-eh-dark-gray/10'" @click="lang = 'css'">CSS</button>
-    <button class="text-base px-4 border-r border-eh-dark-gray/50 py-2" :class="lang == 'html' ? 'text-eh-white bg-eh-dark-gray/40' : 'text-eh-gray hover:text-eh-light-gray hover:bg-eh-dark-gray/10'" @click="lang = 'html'">HTML</button>
-    <button class="text-base px-4 border-r border-eh-dark-gray/50 py-2" :class="lang == 'js' ? 'text-eh-white bg-eh-dark-gray/40' : 'text-eh-gray hover:text-eh-light-gray hover:bg-eh-dark-gray/10'" @click="lang = 'js'">JS</button>
-    <button class="text-base px-4 border-r border-eh-dark-gray/50 py-2" :class="lang == 'go' ? 'text-eh-white bg-eh-dark-gray/40' : 'text-eh-gray hover:text-eh-light-gray hover:bg-eh-dark-gray/10'" @click="lang = 'go'">Go</button>
-    <button class="text-base px-4 border-r border-eh-dark-gray/50 py-2" :class="lang == 'python' ? 'text-eh-white bg-eh-dark-gray/40' : 'text-eh-gray hover:text-eh-light-gray hover:bg-eh-dark-gray/10'" @click="lang = 'python'">Python</button>
-    <button class="text-base px-4 border-r border-eh-dark-gray/50 py-2" :class="lang == 'ruby' ? 'text-eh-white bg-eh-dark-gray/40' : 'text-eh-gray hover:text-eh-light-gray hover:bg-eh-dark-gray/10'" @click="lang = 'ruby'">Ruby</button>
-    <button class="text-base px-4 border-r border-eh-dark-gray/50 py-2" :class="lang == 'rust' ? 'text-eh-white bg-eh-dark-gray/40' : 'text-eh-gray hover:text-eh-light-gray hover:bg-eh-dark-gray/10'" @click="lang = 'rust'">Rust</button>
-    <button class="text-base px-4 border-r border-eh-dark-gray/50 py-2" :class="lang == 'md' ? 'text-eh-white bg-eh-dark-gray/40' : 'text-eh-gray hover:text-eh-light-gray hover:bg-eh-dark-gray/10'" @click="lang = 'md'">Markdown</button>
-    <button class="text-base px-4 border-r border-eh-dark-gray/50 py-2" :class="lang == 'ts' ? 'text-eh-white bg-eh-dark-gray/40' : 'text-eh-gray hover:text-eh-light-gray hover:bg-eh-dark-gray/10'" @click="lang = 'ts'">Typescript</button>
-    <button class="text-base px-4 border-r border-eh-dark-gray/50 py-2" :class="lang == 'yml' ? 'text-eh-white bg-eh-dark-gray/40' : 'text-eh-gray hover:text-eh-light-gray hover:bg-eh-dark-gray/10'" @click="lang = 'yml'">YML</button>
-  </header>
+<section id="examples" class="mx-auto w-full max-w-7xl scroll-mt-24 px-6 py-16 lg:px-12 lg:py-24">
+  <h2 class="text-3xl font-bold tracking-tight text-eh-text-bright lg:text-4xl">Examples</h2>
+  <p class="mt-3 max-w-2xl text-eh-muted">See the color scheme in action across common languages. Switch the theme above to preview both variants.</p>
+
+  <div class="mt-6 flex items-start gap-3 rounded-lg border border-eh-yellow/40 bg-eh-yellow/10 p-4 text-sm text-eh-text">
+    <span class="mt-0.5 h-5 w-5 shrink-0 text-eh-yellow">{% include "bolt.svg" %}</span>
+    <p>These snippets use the <a href="https://prismjs.com/" target="_blank" rel="noopener" class="font-semibold text-eh-yellow underline decoration-eh-yellow/40 underline-offset-2">PrismJS</a> highlighter, so the exact highlighting in your editor may differ.</p>
+  </div>
+
+  <div
+    class="mt-8 overflow-hidden rounded-xl border border-eh-border bg-eh-surface"
+    x-data="{
+      lang: 'css',
+      langs: [
+        { id: 'css', label: 'CSS' },
+        { id: 'html', label: 'HTML' },
+        { id: 'js', label: 'JS' },
+        { id: 'go', label: 'Go' },
+        { id: 'python', label: 'Python' },
+        { id: 'ruby', label: 'Ruby' },
+        { id: 'rust', label: 'Rust' },
+        { id: 'md', label: 'Markdown' },
+        { id: 'ts', label: 'TypeScript' },
+        { id: 'yml', label: 'YAML' },
+      ]
+    }"
+  >
+    <header class="flex w-full items-center overflow-x-auto border-b border-eh-border bg-eh-bg/40">
+      <template x-for="l in langs" :key="l.id">
+        <button
+          @click="lang = l.id"
+          x-text="l.label"
+          class="shrink-0 border-r border-eh-border/60 px-4 py-2.5 font-mono text-sm transition-colors"
+          :class="lang === l.id ? 'bg-eh-surface-2 text-eh-text-bright' : 'text-eh-muted hover:text-eh-text-bright'"
+        ></button>
+      </template>
+    </header>
     {% include "snippets/css.html" %}
     {% include "snippets/html.html" %}
     {% include "snippets/js.html" %}
@@ -28,6 +45,5 @@
     {% include "snippets/markdown.html" %}
     {% include "snippets/ts.html" %}
     {% include "snippets/yaml.html" %}
-</div>
+  </div>
 </section>
-

@@ -1,4 +1,5 @@
 data:
+  # Editors
   - name: Neovim
     repo: nvim
     icon: neovim
@@ -7,39 +8,57 @@ data:
     repo: vscode
     icon: vscode
     color: blue
-  - name: Insomnia
-    repo: insomnia
-    icon: insomnia
+  - name: Zed
+    repo: zed
+    icon: zed
+    color: blue
+  - name: Sublime Text
+    repo: sublime
+    icon: sublime
+    color: orange
+  - name: Atom
+    repo: atom
+    icon: atom
     color: purple
+  # Terminals & shells
   - name: Kitty
     repo: kitty
-    icon: terminal
-    color: orange
+    icon: kitty
+    color: red
   - name: Alacritty
     repo: alacritty
-    icon: rocket
-    color: red
+    icon: alacritty
+    color: orange
   - name: Ghostty
     repo: ghostty
-    icon: ghost
+    icon: ghostty
     color: purple
   - name: Hyper
     repo: hyper
     icon: bolt
-    color: yellow
+    color: cyan
   - name: iTerm 2
     repo: iterm
+    icon: iterm
+    color: yellow
+  - name: Terminal.app
+    repo: terminal
     icon: terminal
-    color: green
+    color: red
   - name: tmux
     repo: tmux
-    icon: terminal
-    color: cyan
+    icon: tmux
+    color: green
   - name: Fish Shell
     repo: fish
-    icon: terminal
+    icon: fish
     color: green
-  - name: Terminal.app
-    repo: terminals
-    icon: terminal
-    color: blue
+  # CLI tools
+  - name: bat
+    repo: bat
+    icon: bat
+    color: yellow
+  - name: Pi
+    repo: pi
+    icon: pi
+    color: cyan

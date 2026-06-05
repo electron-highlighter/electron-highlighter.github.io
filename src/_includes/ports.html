@@ -1,16 +1,17 @@
-<section class="py-12 lg:py-20 my-12 lg:my-20 bg-eh-bg-dark">
-  <div class="mx-auto block max-w-7xl w-full px-6 lg:px-12">
-    <h2 id="ports" class="text-eh-white text-3xl lg:text-4xl font-bold mb-8">Ports</h2>
-    <p class="mb-8 lg:mb-12 text-base lg:text-xl leading-loose">Electron Highlighter is available for the following platforms:</p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-6">
-    {% for item in ports.data %}
-      <a href="https://github.com/electron-highlighter/{{ item.repo }}" target="_blank" class="flex items-center gap-3 group">
-        <span class="h-5 w-5 text-eh-{{ item.color }}">
-          {% include item.icon + ".svg" %}
-        </span>
-        <span class="text-lg text-eh-light-gray group-hover:text-eh-white">{{ item.name }}</span>
-      </a>
-    {% endfor %}
+<section id="ports" class="scroll-mt-24 border-y border-eh-border/60 bg-eh-surface/40 py-16 lg:py-24">
+  <div class="mx-auto w-full max-w-7xl px-6 lg:px-12">
+    <h2 class="text-3xl font-bold tracking-tight text-eh-text-bright lg:text-4xl">Ports</h2>
+    <p class="mt-3 max-w-2xl text-eh-muted">Electron Highlighter is available for the following platforms.</p>
+    <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {% for item in ports.data %}
+        <a href="https://github.com/electron-highlighter/{{ item.repo }}" target="_blank" rel="noopener"
+           class="group flex items-center gap-4 rounded-xl border border-eh-border bg-eh-surface p-4 transition-all hover:-translate-y-0.5 hover:border-eh-{{ item.color }}">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-eh-bg text-eh-{{ item.color }}">
+            <span class="h-5 w-5">{% include item.icon + ".svg" %}</span>
+          </span>
+          <span class="font-medium text-eh-text transition-colors group-hover:text-eh-text-bright">{{ item.name }}</span>
+        </a>
+      {% endfor %}
     </div>
   </div>
 </section>

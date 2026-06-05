@@ -4,8 +4,41 @@ title: Electron Highlighter
 path: home
 ---
 
-<section class="mx-auto block max-w-7xl w-full px-6 lg:px-12">
-    <p class="text-xl leading-relaxed my-12 lg:my-20 max-w-3xl">Electron highlighter is a dark syntax theme based off of the iconic One Dark theme from Atom, with a more vibrant color palette.</p>
+<section class="mx-auto w-full max-w-7xl px-6 lg:px-12">
+  <div class="py-16 lg:py-28 max-w-3xl">
+    <span class="inline-flex items-center gap-2 rounded-full border border-eh-border bg-eh-surface px-3 py-1 font-mono text-xs text-eh-muted">
+      <span class="h-2 w-2 rounded-full bg-eh-green"></span>
+      Now with a light Day variant
+    </span>
+    <h1 class="mt-6 text-4xl font-bold tracking-tight text-eh-text-bright sm:text-5xl lg:text-6xl">
+      A vibrant syntax theme<br class="hidden sm:block"> for
+      <span class="text-eh-blue">dark</span> &amp;
+      <span class="text-eh-orange">light</span>.
+    </h1>
+    <p class="mt-6 text-lg leading-relaxed text-eh-text lg:text-xl">
+      Electron Highlighter is a syntax theme based on the iconic One Dark theme
+      from Atom, reimagined with a more vibrant color palette. Toggle the theme
+      above &mdash; this whole page is a live preview.
+    </p>
+    <div class="mt-8 flex flex-wrap items-center gap-4 font-mono text-sm">
+      <a href="#ports" class="inline-flex items-center gap-2 rounded-lg bg-eh-blue px-5 py-2.5 font-semibold text-eh-bg transition-opacity hover:opacity-90">
+        Get the theme
+      </a>
+      <a href="https://github.com/electron-highlighter" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-lg border border-eh-border bg-eh-surface px-5 py-2.5 text-eh-text transition-colors hover:text-eh-text-bright">
+        <span class="h-4 w-4">{% include "github.svg" %}</span>
+        GitHub
+      </a>
+    </div>
+    <div class="mt-10 flex items-center gap-3">
+      <span class="h-4 w-4 rounded-full bg-eh-red"></span>
+      <span class="h-4 w-4 rounded-full bg-eh-orange"></span>
+      <span class="h-4 w-4 rounded-full bg-eh-yellow"></span>
+      <span class="h-4 w-4 rounded-full bg-eh-green"></span>
+      <span class="h-4 w-4 rounded-full bg-eh-cyan"></span>
+      <span class="h-4 w-4 rounded-full bg-eh-blue"></span>
+      <span class="h-4 w-4 rounded-full bg-eh-purple"></span>
+    </div>
+  </div>
 </section>
 
 {% include "palette.html" %}

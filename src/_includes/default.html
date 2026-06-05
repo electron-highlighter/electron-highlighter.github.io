@@ -12,17 +12,46 @@
     {% endif %}
     {% block head %}{% endblock %}
     <link rel="icon" href="/favicon.png" type="image/png">
+    <!-- Set the theme before paint to avoid a flash. Defaults to dark. -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          if (t !== "day" && t !== "dark") t = "dark";
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+    <script>
+      document.addEventListener("alpine:init", () => {
+        Alpine.store("theme", {
+          current: document.documentElement.getAttribute("data-theme") || "dark",
+          get isDay() {
+            return this.current === "day";
+          },
+          toggle() {
+            this.current = this.current === "dark" ? "day" : "dark";
+            document.documentElement.setAttribute("data-theme", this.current);
+            try {
+              localStorage.setItem("theme", this.current);
+            } catch (e) {}
+          },
+        });
+      });
+    </script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
-  <body class="h-full w-screen min-h-screen grid bg-eh-background text-eh-light-gray font-sans overflow-x-hidden layout">
+  <body class="min-h-screen flex flex-col bg-eh-bg text-eh-text font-sans overflow-x-hidden antialiased">
     {% include "header.html" %}
 
-    <main class="h-full w-full">
+    <main class="flex-1 w-full">
       {{ content | safe }}
     </main>
 

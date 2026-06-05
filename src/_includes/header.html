@@ -1,14 +1,27 @@
-<header class="flex flex-col md:flex-row items-center md:justify-between py-4 px-6 lg:px-12 mx-auto w-full max-w-7xl space-y-6 md:space-y-0">
-  <span class="flex items-center gap-6 text-eh-white">
-    <span class="w-8 h-8 md:h-12 md:w-12">
-      {% include "logo.svg" %}
-    </span>
-    <h1 class="text-xl md:text-2xl font-bold">Electron Highlighter</h1>
-  </span>
-  <nav class="flex items-center gap-6 font-mono">
-    <a href="#palette" class="text-eh-light-gray hover:text-eh-white">Palette</a>
-    <a href="#ports" class="text-eh-light-gray hover:text-eh-white">Ports</a>
-    <a href="#examples" class="text-eh-light-gray hover:text-eh-white">Examples</a>
-    <a href="https://github.com/electron-highlighter" class="text-eh-light-gray hover:text-eh-white" target="_blank"><span class="h-5 w-5 inline-flex">{% include "github.svg" %}</span></a>
-  </nav>
+<header class="sticky top-0 z-50 border-b border-eh-border/60 bg-eh-bg/80 backdrop-blur-md">
+  <div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-6 py-4 lg:px-12">
+    <a href="/" class="flex items-center gap-3 text-eh-text-bright">
+      <span class="h-8 w-8 md:h-9 md:w-9">
+        {% include "logo.svg" %}
+      </span>
+      <span class="text-lg font-bold tracking-tight md:text-xl">Electron Highlighter</span>
+    </a>
+    <nav class="flex items-center gap-5 font-mono text-sm md:gap-7">
+      <a href="#palette" class="hidden text-eh-muted transition-colors hover:text-eh-text-bright sm:inline">Palette</a>
+      <a href="#ports" class="hidden text-eh-muted transition-colors hover:text-eh-text-bright sm:inline">Ports</a>
+      <a href="#examples" class="hidden text-eh-muted transition-colors hover:text-eh-text-bright sm:inline">Examples</a>
+      <a href="https://github.com/electron-highlighter" target="_blank" rel="noopener" aria-label="GitHub" class="text-eh-muted transition-colors hover:text-eh-text-bright">
+        <span class="inline-flex h-5 w-5">{% include "github.svg" %}</span>
+      </a>
+      <button
+        x-data
+        @click="$store.theme.toggle()"
+        :aria-label="$store.theme.isDay ? 'Switch to dark theme' : 'Switch to light theme'"
+        class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-eh-border bg-eh-surface text-eh-muted transition-colors hover:text-eh-text-bright"
+      >
+        <span x-show="!$store.theme.isDay" class="h-5 w-5">{% include "sun.svg" %}</span>
+        <span x-show="$store.theme.isDay" class="h-5 w-5" x-cloak>{% include "moon.svg" %}</span>
+      </button>
+    </nav>
+  </div>
 </header>

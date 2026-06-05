@@ -2,73 +2,129 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --code-border: rgba(50,50,50,0.1);
-    --code-red: theme('colors.eh-red'); 
-    --code-orange: theme('colors.eh-orange');
-    --code-yellow: theme('colors.eh-yellow');
-    --code-green: theme('colors.eh-green');
-    --code-cyan: theme('colors.eh-cyan');
-    --code-blue: theme('colors.eh-blue');
-    --code-purple: theme('colors.eh-purple');
-    --code-bg: theme('colors.eh-background');
-    --code-comment: theme('colors.eh-dark-gray');
-    --code-gray: theme('colors.eh-gray');
-    --code-fg: theme('colors.eh-light-gray');
-    --code-white: theme('colors.eh-white')
-    --selection-color: theme('colors.eh-selection-bg');
-    --selection-foreground: theme('colors.eh-white');
+/* ------------------------------------------------------------------ *
+ * Theme palettes. Colors are stored as RGB triplets so Tailwind's
+ * /opacity modifiers work (see tailwind.config.js). The dark set is the
+ * default; [data-theme="day"] swaps in the light "Electron Highlighter
+ * Day" palette. Values mirror palette/electron-dark.js & electron-day.js.
+ * ------------------------------------------------------------------ */
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --eh-bg: 36 40 59;
+  --eh-surface: 31 34 51;
+  --eh-surface-2: 42 47 70;
+  --eh-border: 46 52 76;
+  --eh-text: 168 181 209;
+  --eh-text-bright: 198 207 225;
+  --eh-muted: 117 134 179;
+  --eh-comment: 117 134 179;
+  --eh-selection: 43 51 85;
+  --eh-red: 247 118 142;
+  --eh-orange: 255 209 173;
+  --eh-yellow: 255 236 184;
+  --eh-green: 88 255 199;
+  --eh-cyan: 92 225 255;
+  --eh-blue: 130 170 255;
+  --eh-purple: 210 166 239;
+  --eh-pink: 244 168 216;
 }
-::selection {
-    background: var(--selection-color);
-    color: var(--selection-foreground);
+
+[data-theme="day"] {
+  color-scheme: light;
+  --eh-bg: 238 240 245;
+  --eh-surface: 228 231 238;
+  --eh-surface-2: 221 227 238;
+  --eh-border: 211 216 227;
+  --eh-text: 47 59 84;
+  --eh-text-bright: 31 39 51;
+  --eh-muted: 89 100 126;
+  --eh-comment: 123 136 168;
+  --eh-selection: 214 222 245;
+  --eh-red: 245 42 101;
+  --eh-orange: 240 99 60;
+  --eh-yellow: 223 142 29;
+  --eh-green: 16 168 119;
+  --eh-cyan: 10 159 191;
+  --eh-blue: 54 111 240;
+  --eh-purple: 139 79 224;
+  --eh-pink: 230 43 134;
 }
 
 html {
-    font-variant-ligatures: none;
+  font-variant-ligatures: none;
+  scroll-behavior: smooth;
 }
 
-/**
-* prism.js theme
-*/
+[x-cloak] {
+  display: none !important;
+}
+
+body {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+  background: rgb(var(--eh-selection));
+  color: rgb(var(--eh-text-bright));
+}
+
+/* ------------------------------------------------------------------ *
+ * prism.js theme — driven by the same theme variables, so code
+ * examples recolor with the rest of the page.
+ * ------------------------------------------------------------------ */
 
 /* purgecss start ignore */
+:root {
+  --code-fg: rgb(var(--eh-text));
+  --code-bg: transparent;
+  --code-comment: rgb(var(--eh-comment));
+  --code-red: rgb(var(--eh-red));
+  --code-orange: rgb(var(--eh-orange));
+  --code-yellow: rgb(var(--eh-yellow));
+  --code-green: rgb(var(--eh-green));
+  --code-cyan: rgb(var(--eh-cyan));
+  --code-blue: rgb(var(--eh-blue));
+  --code-purple: rgb(var(--eh-purple));
+}
+
 pre[class*="language-"],
 code[class*="language-"],
 pre.prismjs {
-    color: var(--code-fg);
-    background: var(--code-bg);
-    border-radius: 0;
-    padding: 0;
-    font-size: 1rem;
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
-    line-height: 1.5;
+  color: var(--code-fg);
+  background: var(--code-bg);
+  border-radius: 0;
+  padding: 0;
+  font-size: 0.95rem;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.6;
 
-    -moz-tab-size: 2;
-    -o-tab-size: 2;
-    tab-size: 2;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
 
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
 /* Code blocks */
 .code-snippet > pre,
 pre.prismjs {
-    background: transparent;
-    margin: 0;
-    overflow: auto;
-    width: 100%;
+  background: transparent;
+  margin: 0;
+  overflow: auto;
+  width: 100%;
 }
 
 pre code[class*="language-"] {
-    background: transparent;
+  background: transparent;
 }
 
 .token.comment,
@@ -76,16 +132,12 @@ pre code[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-    color: var(--code-comment);
-}
-
-.prismjs .linenumber {
-    color: var(--code-linenumbers);
-    font-size: 85%;
+  color: var(--code-comment);
+  font-style: italic;
 }
 
 .token.punctuation {
-    color: var(--code-fg);
+  color: var(--code-fg);
 }
 
 .token.tag,
@@ -93,7 +145,7 @@ pre code[class*="language-"] {
 .token.deleted,
 .token.number,
 .token.interpolation-punctuation {
-    color: var(--code-red);
+  color: var(--code-red);
 }
 
 .language-html .token.property,
@@ -103,11 +155,11 @@ pre code[class*="language-"] {
 .token.variable,
 .token.boolean,
 .token.symbol {
-    color: var(--code-orange);
+  color: var(--code-orange);
 }
 
 .token.class-name {
-    color: var(--code-yellow);
+  color: var(--code-yellow);
 }
 
 .token.string,
@@ -115,12 +167,12 @@ pre code[class*="language-"] {
 .token.attr-value,
 .token.regex,
 .token.inserted {
-    color: var(--code-green);
+  color: var(--code-green);
 }
 
 .token.operator,
 .token.entity {
-    color: var(--code-cyan);
+  color: var(--code-cyan);
 }
 
 .token.function-name,
@@ -129,7 +181,7 @@ pre code[class*="language-"] {
 .token.property,
 .language-html .token.attr-value,
 .token.url {
-    color: var(--code-blue);
+  color: var(--code-blue);
 }
 
 .token.selector,
@@ -137,20 +189,19 @@ pre code[class*="language-"] {
 .token.atrule,
 .token.keyword,
 .token.builtin {
-    color: var(--code-purple);
+  color: var(--code-purple);
 }
 
 .token.important,
 .token.bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .token.italic {
-    font-style: italic;
+  font-style: italic;
 }
 
 .token.entity {
-    cursor: help;
+  cursor: help;
 }
-
 /* purgecss end ignore */
