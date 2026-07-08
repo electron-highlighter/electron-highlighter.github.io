@@ -52,6 +52,10 @@ data:
     repo: tmux
     icon: tmux
     color: green
+  - name: Claude Code
+    repo: claude
+    icon: claude
+    color: orange
   - name: VS Code
     repo: vscode
     icon: vscode
