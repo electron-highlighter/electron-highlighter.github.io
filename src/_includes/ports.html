@@ -1,12 +1,13 @@
-<section id="ports" class="scroll-mt-24 border-y border-eh-border/60 bg-eh-surface/40 py-16 lg:py-24">
+<div class="-mb-px bg-eh-surface/40 text-eh-bg"><div class="-scale-x-100">{% include "wave.html" %}</div></div>
+<section id="ports" class="scroll-mt-24 py-16 lg:py-24">
   <div class="mx-auto w-full max-w-7xl px-6 lg:px-12">
     <h2 class="text-3xl font-bold tracking-tight text-eh-text-bright lg:text-4xl">Ports</h2>
     <p class="mt-3 max-w-2xl text-eh-muted">Electron Highlighter is available for the following platforms.</p>
-    <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3 xl:grid-cols-5">
       {% for item in ports.data %}
         <a href="https://github.com/electron-highlighter/{{ item.repo }}" target="_blank" rel="noopener"
            class="group flex items-center gap-4 rounded-xl border border-eh-border bg-eh-surface p-4 transition-all hover:-translate-y-0.5 hover:border-eh-{{ item.color }}">
-          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-eh-bg text-eh-{{ item.color }}">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-eh-{{ item.color }}/5 text-eh-{{ item.color }} shadow-[inset_0_1px_4px_0] shadow-eh-{{ item.color }}/25">
             <span class="h-5 w-5">{% include item.icon + ".svg" %}</span>
           </span>
           <span class="font-medium text-eh-text transition-colors group-hover:text-eh-text-bright">{{ item.name }}</span>

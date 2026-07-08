@@ -29,7 +29,7 @@ module.exports = {
       },
       fontFamily: {
         'sans': [
-          'IBM Plex Sans',
+          'Inter',
           'ui-sans-serif',
           'system-ui',
           'sans-serif',
