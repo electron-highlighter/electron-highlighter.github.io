@@ -6,7 +6,7 @@
     <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3 xl:grid-cols-5">
       {% for item in ports.data %}
         <a href="https://github.com/electron-highlighter/{{ item.repo }}" target="_blank" rel="noopener"
-           class="group flex items-center gap-4 rounded-xl border border-eh-border bg-eh-surface p-4 transition-all hover:-translate-y-0.5 hover:border-eh-{{ item.color }}">
+           class="group flex items-center gap-4 rounded-xl border border-eh-border bg-eh-surface p-4 transition-all hover:border-eh-{{ item.color }}">
           <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-eh-{{ item.color }}/5 text-eh-{{ item.color }} shadow-[inset_0_1px_4px_0] shadow-eh-{{ item.color }}/25">
             <span class="h-5 w-5">{% include item.icon + ".svg" %}</span>
           </span>
