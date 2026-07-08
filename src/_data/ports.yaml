@@ -62,3 +62,7 @@ data:
     repo: pi
     icon: pi
     color: cyan
+  - name: Claude Code
+    repo: claude
+    icon: claude
+    color: orange
