@@ -3,7 +3,7 @@
   <div class="mx-auto w-full max-w-7xl px-6 lg:px-12">
     <h2 class="text-3xl font-bold tracking-tight text-eh-text-bright lg:text-4xl">Ports</h2>
     <p class="mt-3 max-w-2xl text-eh-muted">Electron Highlighter is available for the following platforms.</p>
-    <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3 xl:grid-cols-5">
+    <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {% for item in ports.data %}
         <a href="https://github.com/electron-highlighter/{{ item.repo }}" target="_blank" rel="noopener"
            class="group flex items-center gap-4 rounded-xl border border-eh-border bg-eh-surface p-4 transition-all hover:border-eh-{{ item.color }}">
